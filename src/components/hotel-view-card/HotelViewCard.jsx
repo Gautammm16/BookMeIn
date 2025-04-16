@@ -37,7 +37,7 @@ const HotelViewCard = (props) => {
       className="card border p-4 flex flex-col md:flex-row gap-x-2 w-full"
       data-testid="hotel-view-card"
     >
-      <div className="cursor-pointer">
+      {/* <div className="cursor-pointer">
         <Link
           to={`/hotel/${hotelCode}`}
           className="block text-slate-700 hover:text-brand transition-colors duration-300"
@@ -48,7 +48,19 @@ const HotelViewCard = (props) => {
             className="md:w-[220px] md:h-[140px]"
           />
         </Link>
-      </div>
+      </div> */}
+      <div className="cursor-pointer">
+  <Link
+    to={`/hotel/${hotelCode}`}
+    className="block text-slate-700 hover:text-brand transition-colors duration-300"
+  >
+    <img
+      src={image.imageUrl}
+      alt={image.accessibleText}
+      className="w-full h-auto md:w-[220px] md:h-[140px] object-cover rounded-lg shadow-sm"
+    />
+  </Link>
+</div>
       <div className="flex flex-col justify-between ml-0 md:ml-2 flex-1">
         <div>
           <Link

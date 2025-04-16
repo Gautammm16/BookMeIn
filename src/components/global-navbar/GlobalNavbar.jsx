@@ -18,8 +18,9 @@ const GlobalNavbar = () => {
   return (
     <div className="relative flex flex-wrap justify-between items-center px-4 md:px-12 global-navbar__container bg-brand brand-divider-bottom shadow-md">
       <div className="flex" style={{color: '#fff',fontWeight: '600'}}>
-        <Link to="/">  BookMeIn
-          {/* <img src={logo} alt="site logo" className="site-logo__img" /> */}
+        <Link to="/">  
+        {/* BookMeIn */}
+          <img src={logo} alt="site logo" className="site-logo__img" />
         </Link>
       </div>
       <ul className="list-none hidden md:flex">
