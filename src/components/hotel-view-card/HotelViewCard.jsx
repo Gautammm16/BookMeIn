@@ -27,62 +27,54 @@ const HotelViewCard = (props) => {
     price,
     ratings,
   } = props;
+
   const navigate = useNavigate();
+
   const onBookNowClick = () => {
     navigate(`/hotel/${hotelCode}`);
   };
 
   return (
     <div
-      className="card border p-4 flex flex-col md:flex-row gap-x-2 w-full"
+      className="card border p-4 flex flex-col md:flex-row gap-x-4 w-full"
       data-testid="hotel-view-card"
     >
-      {/* <div className="cursor-pointer">
+      <div className="cursor-pointer md:w-[180px] md:h-[120px] flex-shrink-0">
         <Link
           to={`/hotel/${hotelCode}`}
-          className="block text-slate-700 hover:text-brand transition-colors duration-300"
+          className="block text-slate-700 hover:text-brand transition-colors duration-300 h-full"
         >
           <img
             src={image.imageUrl}
             alt={image.accessibleText}
-            className="md:w-[220px] md:h-[140px]"
+            className="w-full h-full object-cover rounded-md shadow-sm"
           />
         </Link>
-      </div> */}
-      <div className="cursor-pointer">
-  <Link
-    to={`/hotel/${hotelCode}`}
-    className="block text-slate-700 hover:text-brand transition-colors duration-300"
-  >
-    <img
-      src={image.imageUrl}
-      alt={image.accessibleText}
-      className="w-full h-auto md:w-[220px] md:h-[140px] object-cover rounded-lg shadow-sm"
-    />
-  </Link>
-</div>
-      <div className="flex flex-col justify-between ml-0 md:ml-2 flex-1">
+      </div>
+
+      <div className="flex flex-col justify-between ml-0 md:ml-4 flex-1">
         <div>
           <Link
             to={`/hotel/${hotelCode}`}
             className="block text-slate-700 hover:text-brand transition-colors duration-300"
           >
-            <h4 className="text-2xl font-bold text-slate-600">{title}</h4>
+            <h4 className="text-xl font-bold text-slate-600">{title}</h4>
           </Link>
-          <p className="text-slate-600 text-sm">{subtitle}</p>
+          <p className="text-slate-600 text-sm mt-1">{subtitle}</p>
         </div>
-        <ul>
+        <ul className="mt-2 space-y-1">
           {benefits.length > 0 &&
             benefits.map((benefit, index) => (
               <li className="text-green-800 font-medium text-sm" key={index}>
-                <FontAwesomeIcon icon={faCheck} /> {benefit}
+                <FontAwesomeIcon icon={faCheck} className="mr-1" /> {benefit}
               </li>
             ))}
         </ul>
       </div>
-      <div className="flex flex-col ml-0 md:ml-auto justify-between border-l-0 md:border-l-2 items-stretch pl-0 md:pl-4">
-        <div className="flex justify-between my-3 md:my-0 items-center md:flex-col md:justify-between w-full h-full">
-          <h4 className="font-medium text-sm text-white bg-brand p-2">
+
+      <div className="flex flex-col ml-0 md:ml-auto justify-between border-l-0 md:border-l-2 items-stretch pl-0 md:pl-4 mt-4 md:mt-0 md:w-[120px]">
+        <div className="flex justify-between items-center md:flex-col md:justify-between h-full">
+          <h4 className="font-medium text-sm text-white bg-brand p-2 rounded mb-2">
             {ratings} <FontAwesomeIcon icon={faStar} />
           </h4>
           <p className="text-slate-600 font-bold whitespace-nowrap">
@@ -90,7 +82,7 @@ const HotelViewCard = (props) => {
           </p>
         </div>
         <button
-          className=" bg-brand-secondary px-4 py-2 text-white whitespace-nowrap"
+          className="mt-4 md:mt-2 bg-brand-secondary px-4 py-2 text-white whitespace-nowrap rounded"
           onClick={onBookNowClick}
         >
           Book now

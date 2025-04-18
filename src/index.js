@@ -17,6 +17,9 @@ import ForgotPassword from './routes/forgot-password/ForgotPassword';
 import Checkout from 'routes/checkout/Checkout';
 import BookingConfirmation from 'routes/booking-confimation/BookingConifrmation';
 import Bms from 'routes/BMS/Bms';
+import Faq from 'routes/faqs/Faq';
+import Temp from 'routes/temp/Temp';
+import BeAHost from 'routes/Be-A-Host/BeAHost';
 
 // if (process.env.NODE_ENV === 'development') {
 //   makeServer();
@@ -44,9 +47,25 @@ const router = createBrowserRouter([
         element: <HotelsSearch />,
       },
       {
+        path: '/temp',
+        element: <Temp />,
+      },
+      {
+        path: '/BeAHost',
+        element: <BeAHost />,
+      },
+
+
+      {
         path: '/about-us',
         element: <AboutUs />,
       },
+      
+      {
+        path: '/faqs',
+        element: <Faq />,
+      },
+
       {
         path: '/user-profile',
         element: <UserProfile />,

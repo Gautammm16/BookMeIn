@@ -94,6 +94,21 @@ const NavbarItems = ({ isAuthenticated, onHamburgerMenuToggle }) => {
           About us
         </Link>
       </li>
+
+
+      <li className="p-4 hover:bg-blue-900 md:hover:bg-brand">
+        <Link
+          to="/BeAHost"
+          className={`uppercase font-medium text-slate-100 hover-underline-animation ${
+            isActive('/BeAHost') && 'active-link'
+          }`}
+          onClick={onHamburgerMenuToggle}
+        >
+          Be A Host
+        </Link>
+      </li>
+
+
       <li
         className={`${!isAuthenticated && 'p-4 hover:bg-blue-900 md:hover:bg-brand'}`}
       >
